@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "豆包 Dola 15/30秒去水印助手",
+  "version": "2.0.0",
+  "description": "解锁15/30秒时长配置与扩展模型，自动嗅探提取豆包和 Dola 的无水印图片与视频资源（纯净无弹窗版）。",
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.doubao.com/*",
+    "*://*.dola.com/*",
+    "*://*.byteintlapi.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.doubao.com/*",
+        "*://*.dola.com/*"
+      ],
+      "js": [
+        "hook.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.doubao.com/*",
+        "*://*.dola.com/*"
+      ],
+      "js": [
+        "content-panel.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dola-skill-pack-response.json",
+        "doubao-skill-pack-response.json"
+      ],
+      "matches": [
+        "*://*.doubao.com/*",
+        "*://*.dola.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "豆包 Dola 15/30秒去水印助手"
+  }
+}
