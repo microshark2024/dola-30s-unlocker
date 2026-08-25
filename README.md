@@ -24,7 +24,7 @@
 
 1. 下载或克隆本项目到本地：
    ```bash
-   git clone https://github.com/microshark2024/Dola30-unwatermarked.git
+   git clone https://github.com/microshark2024/dola-30s-unlocker.git
    ```
 2. 打开 Google Chrome 或基于 Chromium 的浏览器（Edge / Brave 等），在地址栏输入：
    ```text
